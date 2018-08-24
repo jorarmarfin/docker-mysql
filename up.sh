@@ -1,0 +1,1 @@
+docker run -d --name srv-mysql -p 3307:3306 -it lfmc/iso-mysql
