@@ -10,6 +10,4 @@ services:
     volumes:
       - ${FILES}:/var/lib/mysql
       - ${CONFIG}:/etc/mysql/conf.d
-    networks:
-      - red-trabajo
     restart: always
