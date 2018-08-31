@@ -11,6 +11,5 @@ services:
       - ${FILES}:/var/lib/mysql
       - ${CONFIG}:/etc/mysql/conf.d
     networks:
-      - red
-networks:
-  red:
+      - red-trabajo
+    restart: always
