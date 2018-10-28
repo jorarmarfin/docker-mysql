@@ -11,3 +11,9 @@ services:
       - ${FILES}:/var/lib/mysql
       - ${CONFIG}:/etc/mysql/conf.d
     restart: always
+  adminer:
+    container_name: srv-adminer
+    image: adminer:latest
+    ports:
+      - 8080:8080
+    restart: always
