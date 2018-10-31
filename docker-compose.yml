@@ -8,8 +8,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${PASS_MYSQL}
     volumes:
-      - ${FILES}:/var/lib/mysql
-      - ${CONFIG}:/etc/mysql/conf.d
+      - ${MYSQL_FILES}:/var/lib/mysql
+      - ${MYSQL_CONFIG}:/etc/mysql/conf.d
     restart: always
   adminer:
     container_name: srv-adminer
