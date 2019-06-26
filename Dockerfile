@@ -2,9 +2,9 @@
 FROM mysql:5.7
 
 ENV MYSQL_ROOT_PASSWORD root
-ENV MYSQL_DATABASE moodle
 
-COPY ./db/moodle.sql /docker-entrypoint-initdb.d
+RUN apt-get update -y ; \
+apt-get install -y vim
 
 EXPOSE 3306
 
