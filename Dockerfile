@@ -4,7 +4,7 @@ FROM mysql:5.7
 ENV MYSQL_ROOT_PASSWORD root
 ENV MYSQL_DATABASE drupal
 
-ADD drupal.sql  /docker-entrypoint-initdb.d
+ADD drupal-8.7.5-v1.sql  /docker-entrypoint-initdb.d
 
 
 EXPOSE 3306
