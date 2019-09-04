@@ -4,5 +4,30 @@
 #Paquetes
 -mysql 5.7
 
+## Optimizer mysql
+ejecutar este comando en la carpeta config de su mysql
+wget https://raw.githubusercontent.com/jorarmarfin/docker-mysql/master/myconfig.cnf
 
-command: --key_buffer_size=256M --sort_buffer_size=1M --max_allowed_packet=256M --myisam-recover-options=BACKUP --query_cache_type=1 --query_cache_limit=512M --query_cache_size=1024M --innodb_buffer_pool_size=1G --innodb_log_file_size=64M --innodb_flush_log_at_trx_commit=0 --innodb_thread_concurrency=8 --transaction-isolation=READ-COMMITTED --innodb_flush_method=O_DIRECT --long_query_time=2 --slow_query_log=1 --slow-query-log-file=/var/log/mysql/dev-slow.log --log_error=/var/log/mysql/dev-error.log --general_log_file=/var/log/mysql/dev-mysql.log --general_log=1
+## Docker compose
+~~~~
+version: '3'
+services:
+  db:
+    container_name: srv-mysql
+    image: mysql:5.7
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/config:/etc/mysql/conf.d
+      - ./mysql/backup:/backup
+    restart: always
+  adminer:
+    container_name: srv-adminer
+    image: adminer:latest
+    ports:
+      - 8080:8080
+    restart: always
+~~~~
