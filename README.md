@@ -31,3 +31,10 @@ services:
       - 8080:8080
     restart: always
 ~~~~
+
+## Mysql Backup
+~~~~
+[mysqldump]
+user = usuariobackup
+password =  MiClaveEsSuperSecreta
+~~~~
