@@ -5,9 +5,9 @@ ENV MYSQL_ROOT_PASSWORD root
 
 # RUN apt-get update && apt-get install -y vim
 
-COPY config/*.cnf /etc/mysql/conf.d/
+COPY ./*.cnf /etc/mysql/conf.d/
 
-COPY db1.sql /docker-entrypoint-initdb.d
+COPY db2.sql /docker-entrypoint-initdb.d
 
 EXPOSE 3306
 
